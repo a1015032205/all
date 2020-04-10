@@ -66,7 +66,7 @@ public class DemoController {
     }
 
 
-    @PostMapping(value = "findAll")
+    @PostMapping(value = "findAll111")
     public Object findAll() {
         return infoService.findAll();
     }
