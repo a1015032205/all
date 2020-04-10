@@ -71,6 +71,7 @@ public class DemoController {
         return infoService.findAll();
     }
 
+    @RequestMapping(value = "123",method = RequestMethod.POST)
     public static void main(String[] args) {
         demo();
     }
