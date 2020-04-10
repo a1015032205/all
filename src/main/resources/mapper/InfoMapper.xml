@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.java.dao.InfoMapper">
+    <select id="getAll" resultType="com.java.pojo.Info">
+        select * from info
+    </select>
+
+    <insert id="add" parameterType="com.java.pojo.Info">
+        INSERT INTO info VALUES (null,#{name},#{age})
+    </insert>
+
+    <delete id="del" parameterType="string">
+        DELETE FROM info where id=#{id}
+    </delete>
+
+    <update id="update" parameterType="string">
+        update info set name=#{name} where id=#{id}
+    </update>
+
+    <insert id="addResource" parameterType="java.util.List">
+        insert into info(name, age) values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.name},
+            #{item.age}
+            )
+
+        </foreach>
+    </insert>
+</mapper>

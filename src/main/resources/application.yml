@@ -1,0 +1,35 @@
+server:
+  port: 9999  #d端口
+spring:
+  redis:
+    database: 0
+    host: 180.76.145.197
+    port: 6379
+    jedis:
+      pool:
+        max-wait: 3000
+        max-idle: 50
+        max-active: 100
+        min-idle: 10
+  mail:
+    username: 1015032205@qq.com  #发件人邮件
+    password: fgzmfafznivybdjb  #密钥
+    host: smtp.qq.com  #服务器之类的
+    properties:
+      mail:
+        smtp:
+          ssl:
+            enable: true
+  thymeleaf:
+    encoding: UTF-8
+    cache: false
+    mode: LEGACYHTML5
+  datasource:
+    url: jdbc:mysql://180.76.145.197:3306/cfx?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT&useSSL=false
+    username: root
+    password: a5268413
+    driver-class-name: com.mysql.jdbc.Driver
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  type-aliases-package: com.java.pojo
+
